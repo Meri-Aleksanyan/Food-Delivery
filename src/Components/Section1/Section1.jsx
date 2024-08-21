@@ -12,7 +12,7 @@ const Section1 = () => {
             <div className='overlay-text'>
                 <h1>Welcome to our innovative drone delivery service</h1>
                 <p>
-                    here cutting-edge technology meets convenience. Our drones are designed to deliver your packages quickly and safely, ensuring that your items arrive at your doorstep in record time. With real-time tracking and a user-friendly app, you can stay updated on your delivery every step of the way.
+                    Where cutting-edge technology meets convenience. Our drones are designed to deliver your packages quickly and safely, ensuring that your items arrive at your doorstep in record time. With real-time tracking and a user-friendly app, you can stay updated on your delivery every step of the way.
                 </p>
             </div>
         </section>
