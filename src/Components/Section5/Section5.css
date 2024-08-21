@@ -1,0 +1,100 @@
+/* src/components/JoinOurTeam.css */
+.Section5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #F6F1E9;
+    text-align: center;
+    height: 50vh;
+  }
+  
+  .Section5 h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #4F200D;
+  }
+  
+  .Section5 p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #4F200D;
+  }
+  
+  .job-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .job-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background: #FFD93D;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: left;
+  }
+  
+  .job-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #4F200D;
+  }
+  
+  .job-card p {
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .apply-button {
+    position: relative;
+    width: 130px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px; 
+    background-color: #F6F1E9; 
+    color: #4F200D; 
+    cursor: pointer;
+    overflow: hidden; 
+    transition: color 0.4s ease; /* Smooth transition for text color */
+}
+
+/* Creating the Gradient Overlay */
+.apply-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #4F200D, #4F200D); /* Gradient effect */
+    transition: left 0.4s ease; /* Smooth transition for gradient movement */
+    z-index: 1;
+}
+
+.apply-button:hover::before {
+    left: 0; /* Move gradient to cover the button */
+}
+.apply-button:hover{
+    color: #F6F1E9;
+}
+
+.apply-button span {
+    position: relative; /* text is above the gradient */
+    z-index: 2; /* text is above the gradient overlay */
+}
+  
+
+@media screen and (max-width:1105px){
+  .Section5{
+      height: auto;
+  }
+}

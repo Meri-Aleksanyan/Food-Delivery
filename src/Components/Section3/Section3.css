@@ -1,0 +1,125 @@
+.Section3 {
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F6F1E9;
+    position: relative; /* Needed for positioning pseudo-element */
+    color: white
+}
+
+/* Adding the horizontal line */
+.Section3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%; /* Vertically center the line */
+    height: 150px; /* Thickness of the line */
+    background-color: #FFD93D;
+    transform: translateY(-50%); 
+}
+.Section3-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    z-index: 7;
+}
+
+.Section3-left>p{
+    font-size: 22px;
+    color: #4F200D;
+}
+/* Basic Button Style */
+.button {
+    position: relative;
+    width: 130px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px; 
+    background-color: #F6F1E9; 
+    color: #4F200D; 
+    cursor: pointer;
+    overflow: hidden; 
+    transition: color 0.4s ease; /* Smooth transition for text color */
+}
+
+/* Creating the Gradient Overlay */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #4F200D, #4F200D); /* Gradient effect */
+    transition: left 0.4s ease; /* Smooth transition for gradient movement */
+    z-index: 1;
+}
+
+.button:hover::before {
+    left: 0; /* Move gradient to cover the button */
+}
+.button:hover{
+    color: #F6F1E9;
+}
+
+.button span {
+    position: relative; /* text is above the gradient */
+    z-index: 2; /* text is above the gradient overlay */
+}
+
+
+
+
+.swipe{
+    width: 100vh;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width:1415px){
+    .swipe{
+        width: 65vh;
+    }
+    .swiper {
+        width: 100%;
+        height: 100%;
+      }
+    .swiper-slide img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+  }
+  @media screen and (max-width:1018px){
+    .swipe{
+        display: none;
+    }
+  }
+  @media screen and (max-width:615px){
+    .Section3{
+        height: 40vh;
+    }
+  }

@@ -1,0 +1,84 @@
+/* Section with background image */
+.Section6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 7%;
+    position: relative;
+    background-image: url("./../../images/delivery-drone-concept.jpg");
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: end; 
+    overflow: hidden;
+    color: #F6F1E9;
+    font-size: x-large;
+    gap: 20px;
+}
+
+/* Dark overlay using a pseudo-element */
+.Section6::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
+    z-index: 1; /* Make sure overlay is above the background image */
+}
+
+/* Ensure content inside the section is visible above the overlay */
+.Section6 > * {
+    position: relative;
+    z-index: 2; /* Content above the overlay */
+}
+
+
+.rev_button {
+    position: relative;
+    width: 130px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px; 
+    background-color: #F6F1E9; 
+    color: #4F200D; 
+    cursor: pointer;
+    overflow: hidden; 
+    transition: color 0.4s ease; /* Smooth transition for text color */
+}
+
+/* Creating the Gradient Overlay */
+.rev_button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #FFD93D, #FFD93D); /* Gradient effect */
+    transition: left 0.4s ease; /* Smooth transition for gradient movement */
+    z-index: 1;
+}
+
+.rev_button:hover::before {
+    left: 0; /* Move gradient to cover the button */
+}
+
+.rev_button span {
+    position: relative; /* text is above the gradient */
+    z-index: 2; /* text is above the gradient overlay */
+}
+
+@media screen and (max-width:1024px){
+    .Section6 {
+        background-position: top; 
+    } 
+}
+
+@media screen and (max-width:769px){
+    .Section6 {
+        height: 70vh;
+    } 
+}

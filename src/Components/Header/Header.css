@@ -1,0 +1,143 @@
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Open+Sans&display=swap');
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    color: #4F200D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background-color: #FFD93D; 
+}
+
+/* Hidden state */
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Visible state */
+.header-visible {
+    transform: translateY(0);
+}
+
+/* Scrolled state: background color changes */
+.header-scrolled {
+    background-color: #F6F1E9;
+}
+
+.logo {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: large;
+}
+
+.logo:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 20px;
+}
+
+.menu p {
+    position: relative;
+    font-family: "DM Serif Text", serif;
+    cursor: pointer;
+}
+
+.menu p::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #4F200D;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.menu p:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar{
+    display: none;
+}
+
+@media screen and (max-width: 769px){
+    .menu{
+        display: none
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+    
+    .hamburger_menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #FFD93D; 
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Hidden state for the menu */
+    .hamburger_menu_hidden {
+        display: none;
+    }
+
+    .hamburger_menu p {
+        margin: 0;
+        color: #4F200D; 
+        cursor: pointer;
+        text-align: center; 
+        padding: 10px;
+    }
+    
+    .hamburger_menu p:hover {
+        background-color: #4F200D; 
+        color: #FFD93D; 
+    }
+    
+    /* Hamburger Icon */
+    .hamburger-react {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hamburger-react span {
+        background-color: #4F200D; 
+    }
+    
+    .hamburger-react:hover {
+        cursor: pointer;
+    }
+    .hamburger_menu-scrolled{
+        background-color: #F6F1E9;
+    }
+    .hamburger_menu-scrolled p:hover{
+        color: #4F200D;
+        background-color: #FFD93D;
+    }
+}

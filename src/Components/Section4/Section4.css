@@ -1,0 +1,115 @@
+.Section4{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 30vh;
+    background-color: #F6F1E9;
+}
+
+.subscribe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.subscribe>h2{
+    color: #4F200D;
+    font-size: 35px;
+}
+.subscribe>ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+        padding-left: 10px;
+}
+.subscribe>ul>li{
+    font-size: 20px;
+    color: #4F200D;
+}
+li::marker {
+    color: #4F200D;
+}
+
+.formEmail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 20vh;
+}
+.formEmail>input[type=text]{
+    width: 250px;
+    height: 30px;
+    padding-left: 5%;
+    border: #FFD93D solid 2px;
+    color: #4F200D;
+}
+input[type=text]::placeholder {
+    color: #4F200D;
+    opacity: 1; 
+  }
+input[type=text]:focus{
+    outline: none;
+}
+.subscribeButton {
+    position: relative;
+    width: 130px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px; 
+    background-color: #FFD93D; 
+    color: #4F200D; 
+    cursor: pointer;
+    overflow: hidden; 
+    transition: color 0.4s ease; 
+}
+
+/* Creating the Gradient Overlay */
+.subscribeButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #4F200D, #4F200D); /* Gradient effect */
+    transition: left 0.4s ease; 
+    z-index: 1;
+}
+
+.subscribeButton:hover::before {
+    left: 0; 
+}
+.subscribeButton:hover{
+    color: #F6F1E9;
+}
+
+.subscribeButton span {
+    position: relative; 
+    z-index: 2; 
+}
+
+@media screen and (max-width:975px){
+    .Section4{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        height: auto;
+    }
+    .subscribe>h2{
+        font-size: 25px;
+    }
+    .subscribe>ul{
+        flex-wrap: wrap;
+        padding-left: 35px;
+    }
+    .subscribe>ul>li{
+        font-size: 18px;
+    }
+}
